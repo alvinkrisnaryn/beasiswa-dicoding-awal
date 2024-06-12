@@ -1,0 +1,75 @@
+<!-- Browser Environment -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Environment</title>
+  </head>
+  <body>
+    <main>
+      <div class="1-3">
+        <h3>Browser Environment</h3>
+        <p>
+          Selama belajar materi JavaScript yang dibahas di dalam kelas ini,
+          apakah Anda menyadari semua kode JavaScript berjalan di perangkat
+          browser dan tidak pada perangkat lainnya? Mengapa demikian? Karena
+          kita menggunakan <em>runtime environment</em> milik browser alias
+          semua kode JavaScript dijalankan di atas <em>platform browser</em>
+        </p>
+        <p>
+          Pada awalnya Bahasa Pemrograman JavaScript didesain untuk berjalan di
+          broser. Namun, seiring berjalannya waktu, kini banyak platform yang
+          dapat menjalankan JavaScript di kuar browser. Platform tersebut
+          menggunakan <em>runtime Environment</em> lain seperti Node JS. Salah
+          satu contohnya adalah ketika kita menjalankan kode JavaScript pada
+          <a href="https://glot.io/">glot.io</a>
+        </p>
+        <p>
+          Walaupun JavaScript dapat dijalankan di luar browser, kita perlu tahu
+          bahwa JavaScript yang berjalan di browser memiliki
+          <strong>fungsionalitas khusus</strong> yang tidak bisa ditemukan di
+          tempat lain. Hal tersebut karena ia dijalankan di dalam
+          <strong>browser environment</strong>.
+        </p>
+        <p>
+          Apa istimewanya <em>browser environment</em> ini? Istimewanya terlatak
+          pada "peralatan-peralatan" khusus yang dapat digunakan oleh kode
+          JavaScript untuk berinteraksi dengan browser maupun dengan dokumen
+          HTML yang kita buat. Masih ingat dengan istilah
+          <strong>Browser Object Model</strong> dan
+          <strong>Document Object Model</strong>(DOM)? Keduanya secara khusus
+          hanya tersedia untuk JavaScript yang dijalankan dalam
+          <em>browser environment</em>
+        </p>
+        <p>
+          Pada gambar di bawah ini, kita melihat representasi dari objek window
+          yang hanya bisa diakses oleh JavaScript dalam browser environment.
+          Dengan melalui objek window, kita bisa mengakses DOM serta BOM.
+          <img src="" alt="" />
+        </p>
+        <p>
+          Sehingga, jika kita menjalankan kode JavaScript yang berjalan di luar
+          <em>browser environment</em>, maka
+          <em>browser object</em> (<strong>window</strong>) dan
+          <em>document object</em> (<strong>document</strong>) tidak akan
+          tersedia dan menyebabkan error. Sebagai contoh, jika kita menjalankan
+          method <code>alert</code> di environment browser, alert dialog akan
+          muncul seperti berikut. <img src="" alt="" />
+        </p>
+        <p>
+          Namun, jika menggunakan <a href="https://glot.io/">glot.io</a>, method
+          tersebut akan melemparkan error karena pada situs tersebut (compiler
+          online) kode JavaScript dijalankan di <em>environment</em> NodeJS,
+          yang mana tidak tersedianya <strong>BOM</strong> maupun
+          <strong>DOM</strong>. <img src="" alt="" />
+        </p>
+        <p>
+          Dalam pemrograman <em>front-end</em> kita akan sering bergulat dengan
+          BOM serta DOM untuk mempercantik tampilan website. Sudah siap untuk
+          mengetahui lebih lanjut tentang keduanya?
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

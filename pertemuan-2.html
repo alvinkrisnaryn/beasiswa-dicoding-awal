@@ -9,6 +9,7 @@
   <body>
     <main>
       <div class="1-2">
+        <h3>Menjalankan Website di JavaScript</h3>
         <p>
           Ketika membuat berkas HTML, tentu kita sudah tidak asing dengan
           <i>tag</i> html, bukan? Nah, jika kita sudah familier dengan gaya
@@ -23,6 +24,138 @@
           <strong>external</strong>. Hal ini mirip dengan cara menyematkan
           berkas CSS ke dokumen HTML.
         </p>
+
+        <p>
+          Andaikan kita ingin meminta input dari user pada sebuah
+          <i>box</i> yang muncul. Input tersebut berisi nama dari
+          <i>user</i> dan akan kita munculkan kembali nama dari
+          <i>user</i> tersebut pada sebuah <i>box</i>. Berikut adalah bentuknya
+          dalam kode JavaScript.
+          <img src="img/page-2-1.png" alt="" />
+        </p>
+
+        <p>
+          Lalu kita siapkan juga berkas HTML bernama
+          <strong>index.html</strong> dan strukturnya seperti di bawah ini :
+          <img src="img/page-2-2.png" alt="" />
+        </p>
+
+        <p>
+          Nah, dari kedua kode program di atas, selanjutnya kita mempelajari
+          cara memasukkan kode JavaScript ke dalam berkas HTML. Perhatikan
+          pembahasan di bawah ini.
+        </p>
+
+        <section>
+          <h3>Internal JavaScript</h3>
+          <p>
+            Pertama, kita akan membahas cara menulis sintaks untuk memasukkan
+            kode JavaScript secara internal terlebih dahulu. Caranya cukup mudah
+            layaknya menulis CSS secara internal pada berkas HTML. Cukup
+            tuliskan kode JavaScript kita diantara tag pembuka dan penutup
+            (<code>script</code> dan <code>/script</code>).
+            <img src="img/page-2-3.png" alt="" />
+          </p>
+        </section>
+
+        <section>
+          <h3>External JavaScript</h3>
+          <p>
+            Berikutnya kita akan membahas bagaimana memasukkan kode JavaScript
+            ke dalam berkas HTML secara eksternal. Sama seperti memasukkan CSS
+            secara eksternal pada berkas HTML, kita perlu menulis lokasi berkas
+            berekstensi .js (dot js) pada atribut <strong>src</strong> di dalam
+            tag <code>script</code> alias tag pembuka.
+          </p>
+          <p>
+            Sebagai contoh, kita akan memisahkan kode JavaScript sebelumnya pada
+            berkas terpisah yang bernama <strong>welcome.js</strong>. Dengan
+            demikian, untuk memasukkan <strong>welcome.js</strong> ke dalam
+            berkas <strong>index.html</strong> dapat dituliskan seperti berikut
+            <img src="img/page-2-4.png" alt="" />
+          </p>
+        </section>
+
+        <p>
+          Pada tahap ini, pasti kita akan bertanya-tanya, "Kenappa tidak
+          menggunakan JavaScript internal saja? Padahal kan sama saja dan cara
+          eksternal terkesan lebih kompleks!"
+        </p>
+        <p>
+          Jawabannya sama dengan ketika kita ingin mengimplementasukan CSS
+          secara internal dan eksternal. Kita menggunakan implementasi internal
+          jika baris atau kompleksitas kode JavaScript sedikut atau rendah.
+        </p>
+        <p>
+          Namun perlahan kita akan dibuat pusing jika jumlah kode JavaScript
+          kita banyak serta memiliki kompleksitas yang tinggi. Salah satu
+          kelebihan implementasi JavaScript secara eksternal adalah memudahkan
+          kita untuk memperbaiki laman web ketika terdapat <i>bugs</i> atau
+          error dan menambahkan konten ketika diperlukan. Kita pun dapat
+          menggunakan berkas JavaScript pada multiple dokumen HTML sehingga kita
+          perlu menduplikasi kode. Tentu, hal ini sama seperti berkas CSS.
+        </p>
+        <p>
+          Contohnya pada halaman utama <a href="https://www.w3.org/">W3C</a>.
+          Jika kita melihat berkas HTML-nya, terdapat sebuah elemen
+          <code>script</code> yang merujuk ke sebuah berkas JavaScript
+          eksternal. <img src="img/page-2-5.png" alt="" />
+        </p>
+        <p>
+          Jika kita telah kembali, di dalamnya terdapat kode JavaScript yang
+          berisi perintah untuk memanipilasi struktur HTML mereka. Oleh karena
+          itu, sebaiknya kita menggunakan cara JavaScript eksternal supaya dapat
+          digunakan berulang kali. <img src="img/page-2-6.png" alt="" />
+        </p>
+        <section>
+          <h3>Peletakkan Elemen Script Harus Tepat</h3>
+          <p>
+            Walaupun implementasi JavaScript secara internal maupun eksternal
+            terlihat mirip dengan CSS internal dan eksternal, tetapi terdapat
+            perbedaan mendasar. Perbedaanya adalah kode CSS diletakkan dalam
+            elemen <code>style</code> yang berada di dalam elemn
+            <code>head</code>, sedangkan kode JavaScript diletakkan dalam elemen
+            <code>script</code> yang terdapat di bagian akhir elemen
+            <code>body</code>. Mengapa demikian?
+          </p>
+          <p>
+            Implementasi JavaScript ke dalam HTML akan berbeda jika dibandingkan
+            dengan implementasi CSS. Hal tersebut karena tag
+            <code>style</code> harus berada di dalam tag <code>head</code> yang
+            membuat elemen-elemeb pada dokumen HTML akan berganting pada konten
+            dalam CSS. Sehingga, langkah paling logis adalah mempersiapkan
+            konten CSS terlebih dahulu.
+          </p>
+          <p>
+            Berbeda dengan JavaScript, jika <i>website</i> kita tidak memerlukan
+            JavaScript unutk menampilkan halaman web, maka sebaliknya tag
+            <code>script</code> diletakkan sebelum bagian akhir dari sebuah
+            berkas HTML. Karena jika meletakkannya di awal, semua konten HTML
+            tidak akan dijalankan sebelum kode JavaScript yang berada pada tag
+            <code>script</code> selesai dijalankan. Ambil contoh isi berkas HTML
+            berikut:
+            <img src="img/page-2-7.png" alt="" />
+          </p>
+          <p>
+            Jika diperhatikan kembali pada tampilan di atas, kita haris menekan
+            tombol "OK" terlebih dahulu supaya dapat menampilkan konten HTML.
+            Hal ini dikarenakan elemen script dijalankan terlbih dahulu sehingga
+            dokumen HTML belum di-render secara menyeluruh.
+          </p>
+          <p>
+            Anda harus benar-benar mempertimbangkan posisi peletakan tag
+            <code>script</code> pada berkas HTML-nya. Jika tidak hati-hati, maka
+            bisa saja tampilan halaman web menjadi tertunda dan dapat membuat
+            pengalaman yang tidak mengenakkan bagi user yang sedang mengunjungi
+            website kita.
+          </p>
+          <p>
+            Apakah ini berarti tag <code>script</code> harus selalu diletakkan
+            di bagian akhir berkas HTML? Tidak juga. Jika tampilan halaman web
+            Anda berganting terhadap kode JavaScript, sebaiknya diletakkan di
+            bagian yang sesuai.
+          </p>
+        </section>
       </div>
     </main>
   </body>
