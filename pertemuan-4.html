@@ -1,0 +1,154 @@
+<!-- Penjelasan Browser Object Model -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penjelasan Browser Object Model</title>
+  </head>
+  <body>
+    <main>
+      <div class="1-4">
+        <article>
+          <h3>Pendahuluan Browser Object Model (BOM)</h3>
+          <p>
+            Setiap <em>browser</em> menyediakan apa yang disebut Browser Object
+            Model atau BOM yang bisa kita gunakan dalam kode JavaScript kita.
+            Dalam <em>browser</em>, BOM ini diwakilkan oleh sebuah objek bernama
+            <em>window</em>. Mari kita ketik <em>window</em> ada
+            <em>console browser</em> dan lihat <em>method</em> apa saja yang
+            tersedia melalui objek ini: <img src="" alt="" />
+          </p>
+          <p>
+            Melalui objek <em>window</em> inilah kode JavaScript kita bisa
+            mengakses berbagai <em>method</em> dan atribut. Akan tetapi, Anda
+            tidak diharapkan untuk menghafal semuanya karena materi berikutnya
+            kita cukup membahas 3 method paling dasar yakni
+            <code>alert()</code>, <code>prompt()</code> dan objek
+            <strong>console</strong>.
+          </p>
+        </article>
+        <article>
+          <h3>Macam-macam anggota dari BOM</h3>
+          <p>
+            Pada materi ini, kita akan membahas lebih dalam mengenai
+            <strong>method alert</strong>
+          </p>
+          <section>
+            <h4>Method Alert</h4>
+            <p>
+              Method <code>alert()</code> merupakan salah satu method BOM yang
+              menerima satu parameter opsional berupa data <em>string</em> yang
+              akan ditampilkan melalui sebuah pop-up browser. Contohnya, jika
+              kita ingin menampilkan sebuah pesan berisi stirng "Halo, user!"
+              menggunakan console browser, caranya sebagai berikut:
+              <img src="" alt="" />
+            </p>
+            <p>
+              Tampilannya akan terlihat seperti berikut. <img src="" alt="" />
+            </p>
+            <p>
+              Sama seperti memanggil <em>method</em> pada umumnya pada
+              JavaScript, bukan? Kita juga bisa memasukkan variabel sebagai
+              parameternya seperti berikut. <img src="" alt="" />
+            </p>
+            <p>
+              Jika dijalankan pada console browser, hasilnya akan seperti
+              berikut. <img src="" alt="" />
+            </p>
+            <p>
+              Kita bisa menampilkan pesan yang telah ditentukan melalui
+              JavaScript. Namun, ada satu hal yang perlu kita ingat saat
+              menggunakan <code>alert()</code>, yakni ketika pop-up muncul, user
+              tidak bisa berinteraksi dengan bagian lain dari halaman
+              <em>web</em> sampai pop-up tersebut ditutup.
+            </p>
+          </section>
+          <section>
+            <h4>Method Prompt</h4>
+            <p>
+              Method ini akan menampilkan sebuah dialog browser yang meminta
+              user untuk mengisi kolom inputnya. Karena bisa menangkap input
+              dari user, method ini memiliki lebih banyak fungsionalitas
+              ketimbang <code>alert()</code>
+            </p>
+            <h4>Nilai kembalian dari prompt</h4>
+            <p>
+              Jika kita lihat, sebenarnya method
+              <code>alert()</code> mengembalikan sebuah value berupa
+              <em>undefined</em>. Namun, <code>prompt()</code> akan
+              mengembalikan sebuah nilai sesuai dengan inputan user. Sebagai
+              contoh, mari kita jalankan kode berikut pada
+              <em>console browser</em>. <img src="" alt="" />
+            </p>
+            <p>
+              Lalu, coba kita tampilkan isi dari variabel pesanInput, maka
+              hasilnya pasti akan sesuai dengan yang kita input pada pop-up.
+              <img src="" alt="" />
+            </p>
+            <p>
+              Kita bisa melihat bahwa nilai yan tersimpan di variabel pesanInput
+              sesuai dengan input yang diberikan user, yakni "Aku suka belajar
+              koding". Jika user tidak mengisi apa pun dan tetap menemkan tombol
+              "OK", maka nilai yang diberikan hanya <em>string</em> kosong.
+            </p>
+            <p>
+              Pada contoh di atas, kita telah menekan tombol "OK", tetapi apa
+              yang terjadi jika kita menekan tombol "Cancel"? Jika kita menekan
+              tombol "Cancel", justru nilai yang akna dikembalikan adalah
+              <em>null</em>. Silahkan coba kembali contoh di atas, nanti nilai
+              variabel pesanInput akan bernilai <em>null</em>
+            </p>
+            <p>
+              Ada satu hal yang perlu kita ingat selama menggunakan
+              <code>prompt()</code>, yakni nilai apa pu yang dimasukkan oleh
+              user akan diproses dan dikembalikan menjadi data string. Silahkan
+              jalankan kode berikut pada <em>console browser</em>.
+              <img src="" alt="" />
+            </p>
+            <p>
+              Ketika kita menampilkan tipe data dari variabel pesanInput, maka
+              sudah pasti tipe datanya adalah <em>string</em>, walau yang kita
+              masukkan berupa angka. <img src="" alt="" />
+            </p>
+            <p>
+              Hal ini perlu kita ingat baik-baik. Kode tidak bisa menduga bahwa
+              variabel pesanInput merupakan string atau number, ia akan tetap
+              mengeluarkan string. Meskipun demikian , kita bisa
+              <em>cast</em> atau <em>parse</em> hasilnya ke tipe data tertenti.
+              Namun, harap lebih teliti karena jika kita salah melakukan
+              <em>parse</em> ke tipe data maka akan menghasilkan NaN. Sebagai
+              contoh, kita ingin mendapatkan value number dari
+              <code>prompt()</code> maka kita bisa menggunakan cara ini.
+              <img src="" alt="" />
+            </p>
+            <p>
+              Jika kita periksa tipe data dari hasilnya, maka hasilnya berupa
+              number. Selain <code>Number()</code>, kita juga bisa menggunakan
+              function <code>parseInt()</code> untuk melakukan parsing data
+              string ke number. <img src="" alt="" />
+            </p>
+            <h4>Memberikan Nilai Default untuk prompt</h4>
+            <p>
+              Terdapat satu parameter lagi yang bisa kita masukkan ke
+              <code>prompt()</code>, dimana parameter ini berguna sebagai nilai
+              alternatif. Mari jika jalankan kode berikut. <img src="" alt="" />
+            </p>
+            <p>
+              Jika kita jalankan pada <em>browser</em>, maka kolom input yang
+              muncul pada <em>dialog box</em> akan memiliki data secara otomatis
+              <img src="" alt="" />
+            </p>
+            <p>
+              Terdapat satu hal penting, yaitu <em>dialog box</em> dari
+              <code>prompt()</code> muncul, maka kita tidak bisa berinteraksi
+              dengan komponen lain pada halaman <em>web</em> sampai
+              <em>dialog box</em> tersebut ditutup. Hal ini sama halnya dengan
+              <code>alert()</code>
+            </p>
+          </section>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
